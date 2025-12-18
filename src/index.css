@@ -2,6 +2,27 @@
 
 @import "tailwindcss";
 
+/* Base Reset - CRITICAL FOR DEPLOYMENT */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 :root {
   --accent-color-rgb: 128 0 128;
   --accent-color: rgb(var(--accent-color-rgb));
@@ -368,5 +389,3 @@ body:not(.portal-active) span,
 body:not(.portal-active) div {
   font-family: 'Poppins', sans-serif !important;
 }
-
- 
