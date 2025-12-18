@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --accent-color-rgb: 128 0 128;
+  --accent-color: rgb(var(--accent-color-rgb));
+  background-color: #000000;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #000000;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #000000;
+}
+
+nav{
+  position: static;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  /*color: black;*/
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+}
+
+.nav-links{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  color: white;
+ 
+}
+
+main{
+  padding-top: 80px;
+  margin-top: auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+ 
+section:nth-child(even) .grid {
+  direction: rtl;
+}
+
+section:nth-child(even) .grid > * {
+  direction: ltr;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+@font-face {
+  font-family: 'Poppins', sans-serif;
+  src: url('https://unpkg.com/win98-font@1.0.0/fonts/converted/MS-Sans-Serif.ttf');
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+  padding-left: 100%;
+}
+
+ 
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  33% { transform: translateY(-20px) translateX(10px); }
+  66% { transform: translateY(10px) translateX(-10px); }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.portal-page nav,
+.portal-page header,
+.portal-page footer,
+.portal-page .navbar,
+.portal-page [class*="nav"],
+.portal-page [class*="Nav"] {
+  display: none !important;
+}
+
+.portal-page {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.portal-page main {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+ 
+.portal-page .window {
+  border: 2px solid;
+  border-color: #dfdfdf #808080 #808080 #dfdfdf;
+  background: #c0c0c0;
+  position: relative;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.2);
+}
+
+.portal-page .window:before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border: 2px solid;
+  border-color: #ffffff #404040 #404040 #ffffff;
+  pointer-events: none;
+}
+
+.portal-page .title-bar {
+  background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
+  padding: 3px 5px 3px 3px;
+  font-weight: bold;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "MS Sans Serif", sans-serif;
+}
+
+.portal-page .title-bar-text {
+  flex-grow: 1;
+  font-family: "MS Sans Serif", sans-serif;
+}
+
+.portal-page .title-bar-controls {
+  display: flex;
+  gap: 2px;
+}
+
+.portal-page .title-bar-controls button,
+.portal-page .minimize,
+.portal-page .maximize,
+.portal-page .close {
+  width: 16px;
+  height: 14px;
+  border: 1px solid;
+  border-color: #dfdfdf #404040 #404040 #dfdfdf;
+  background: #c0c0c0;
+  padding: 0;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.portal-page .window-body {
+  padding: 8px;
+  background: #c0c0c0;
+}
+
+.portal-page .button {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  color: black;
+  padding: 4px 12px;
+  font-family: "MS Sans Serif", sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+  box-shadow: inset 1px 1px 0 #dfdfdf, inset -1px -1px 0 #404040;
+}
+
+.portal-page .button:active {
+  border-color: #808080 #ffffff #ffffff #808080;
+  box-shadow: inset -1px -1px 0 #dfdfdf, inset 1px 1px 0 #404040;
+}
+
+.portal-page .field-row,
+.portal-page .field-row-stacked {
+  display: block;
+}
+
+.portal-page .progress {
+  background: white;
+  border: 2px solid;
+  border-color: #808080 #dfdfdf #dfdfdf #808080;
+  height: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.portal-page .progress > div {
+  background: linear-gradient(90deg, #000080 0%, #1084d0 100%);
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+ 
+.portal-page .taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background: #c0c0c0;
+  border-top: 2px solid #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  z-index: 1000;
+  font-family: "MS Sans Serif", sans-serif;
+}
+
+.portal-page .start-button {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  padding: 2px 8px;
+  font-weight: bold;
+  font-size: 11px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.portal-page .start-button:active {
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+.portal-page .taskbar-tasks {
+  flex: 1;
+  display: flex;
+  gap: 2px;
+  margin-left: 4px;
+}
+
+.portal-page .taskbar-item {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+  padding: 2px 8px;
+  font-size: 11px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.portal-page .taskbar-item.active {
+  border-color: #808080 #ffffff #ffffff #808080;
+  box-shadow: inset -1px -1px 0 #dfdfdf, inset 1px 1px 0 #404040;
+}
+
+.portal-page .taskbar-tray {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 4px;
+  border: 1px solid;
+  border-color: #808080 #ffffff #ffffff #808080;
+  height: 20px;
+  font-size: 11px;
+}
+
+ 
+.portal-page .window-body::-webkit-scrollbar {
+  width: 16px;
+}
+
+.portal-page .window-body::-webkit-scrollbar-track {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+}
+
+.portal-page .window-body::-webkit-scrollbar-thumb {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #ffffff #808080 #808080 #ffffff;
+}
+
+.portal-page .window-body::-webkit-scrollbar-thumb:active {
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+ 
+.win95-border {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #dfdfdf #808080 #808080 #dfdfdf;
+}
+
+.win95-border-inset {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #808080 #dfdfdf #dfdfdf #808080;
+}
+
+.win95-button {
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #dfdfdf #808080 #808080 #dfdfdf;
+}
+
+.win95-button:active {
+  border-color: #808080 #dfdfdf #dfdfdf #808080;
+}
+
+/* RESET FONTS FOR NON-PORTAL PAGES */
+body:not(.portal-active) * {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* OR be more specific */
+body:not(.portal-active) {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+body:not(.portal-active) h1,
+body:not(.portal-active) h2,
+body:not(.portal-active) h3,
+body:not(.portal-active) p,
+body:not(.portal-active) span,
+body:not(.portal-active) div {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+ 
