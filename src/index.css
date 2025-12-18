@@ -2,10 +2,9 @@
 
 @import "tailwindcss";
 
-:root {
-  --accent-color-rgb: 128 0 128;
-  --accent-color: rgb(var(--accent-color-rgb));
-  background-color: #000000;
+/* Minimal reset - only what we NEED */
+* {
+  box-sizing: border-box;
 }
 
 html {
@@ -14,10 +13,17 @@ html {
 }
 
 body {
+  margin: 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
   background-color: #000000;
-  max-width: 100vw;
   overflow-x: hidden;
+}
+
+:root {
+  --accent-color-rgb: 128 0 128;
+  --accent-color: rgb(var(--accent-color-rgb));
+  background-color: #000000;
 }
 
 nav{
@@ -136,6 +142,7 @@ section:nth-child(even) .grid > * {
 .portal-page {
   padding-top: 0 !important;
   margin-top: 0 !important;
+  overflow-x: hidden;
 }
 
 .portal-page main {
