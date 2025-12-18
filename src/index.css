@@ -2,17 +2,6 @@
 
 @import "tailwindcss";
 
-/* Minimal Base Reset - ONLY what's needed */
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
 :root {
   --accent-color-rgb: 128 0 128;
   --accent-color: rgb(var(--accent-color-rgb));
