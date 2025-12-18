@@ -14,7 +14,7 @@ import Particles from "./components/Particles";
 import Projects from "./components/Projects";
 import TargetCursor from "./components/TargetCursor.jsx";
 import Writings from "./components/Writings";
-import './index.css';
+ 
 import Portal from "./pages/Portal";
 //import TiltedCard from './pages/TiltedCard';
 
