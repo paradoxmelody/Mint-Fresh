@@ -149,7 +149,7 @@ const Portal = () => {
         </div>
 
         {/* Main grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           
           {/* Music Box - Now Playing (Using Win98 classes) */}
           <div className="window w-full  max-w-[490px] md:h-[400px]">
@@ -273,7 +273,7 @@ const Portal = () => {
           </div>
           
           {/* Webrings Box (Using Win98 classes) */}
-          <div className="window w-full md:w-[490px]">
+          <div className="window w-full md:w-[490px] md:h-[440px]">
             <div className="title-bar bg-purple-600">
               <div className="title-bar-text text-white">
                  MY ART
@@ -313,7 +313,7 @@ const Portal = () => {
           </div>
 
           {/* Currently Box (Using Win98 classes) */}
-          <div className="window w-full md:w-[490px]">
+          <div className="window w-full md:w-[490px] md:h-[440px]">
             <div className="title-bar bg-blue-900">
               <div className="title-bar-text text-white">
                  ANIME & BOOKS
@@ -349,16 +349,13 @@ const Portal = () => {
                   <p className="text-black text-xs font-bold">Hunter x Hunter</p>
                   <p className="font-mono text-sm">Tomorrow I become a Woman</p>
                 </div>
-                <div>
-                  <p className="text-black text-xs font-bold">Serial Experiments Lain</p>
-                  <p className="font-mono text-sm">The Alchemist</p>
-                </div>
+                
               </div>
             </div>
           </div>
 
           {/* Collections Box (Using Win98 classes) */}
-          <div className="window w-full md:w-[490px]">
+          <div className="window w-full md:w-[490px] md:h-[440px]">
             <div className="title-bar bg-blue-900">
               <div className="title-bar-text text-white">
                  COLLECTIONS
@@ -369,12 +366,12 @@ const Portal = () => {
                 <img 
                   src="/ballin-cat.gif"  
                   alt="Blinkie"
-                  className="border-2 border-gray-400 w-full h-45 object-contain"
+                  className="border-2 border-gray-400 w-full h-30 object-contain"
                 />
                 <img 
                   src="/kyrie-irving.gif" 
                   alt="Blinkie"
-                  className="border-2 border-gray-400 w-full h-50 object-contain"
+                  className="border-2 border-gray-400 w-full h-30 object-contain"
                 />
                 <img 
                   src="/chinese.gif" 
@@ -409,11 +406,11 @@ const Portal = () => {
           </div>
 
           <div className="hidden lg:flex flex-none gap-4">
-            <img src="catieGIF.gif" alt="pablo" className="w-45 h-45 object-bottom-left " />
+            <img src="/marinette-miraculous-ladybug.gif" alt="pablo" className="w-60 h-50 object-bottom-left " />
           </div>
           
           {/* PLAYLIST WINDOW */}
-          <div className="window w-full md:w-[400px] md:h-[200px] mx-auto">
+          <div className="window w-full md:w-[400px] md:h-[440px] mx-auto">
             <div className="title-bar bg-purple-600"> 
               <div className="title-bar-text text-white">
                  Mel's  Playlist

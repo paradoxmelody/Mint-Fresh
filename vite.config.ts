@@ -1,27 +1,19 @@
 import react from '@vitejs/plugin-react'
-import { resolve } from 'path'
+import path from 'path'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: './',  // Keep as '/' for Netlify root deployment
   build: {
     outDir: 'dist',
-    rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html')
-      },
-      output: {
-        manualChunks: undefined, // Prevents chunk splitting issues
-      }
-    },
-    cssCodeSplit: false,
-    assetsDir: 'assets',
-    chunkSizeWarningLimit: 2000, // Increases limit for large CSS files
+    // REMOVE all rollupOptions - they're causing issues
+    // ADD this emptyDir to clean dist folder
+    emptyOutDir: true,
   },
   resolve: {
     alias: {
-      '@': resolve(__dirname, './src')
+      '@': path.resolve(__dirname, './src')
     }
   }
 })
