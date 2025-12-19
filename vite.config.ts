@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [react()],
-  base: './',  // Keep as '/' for Netlify root deployment
+  base: '/',  // Keep as '/' for Netlify root deployment
   build: {
     outDir: 'dist',
     // REMOVE all rollupOptions - they're causing issues
