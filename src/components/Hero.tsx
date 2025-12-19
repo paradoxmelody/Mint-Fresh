@@ -132,31 +132,45 @@ const SocialLinks = () => {
     </div>
   );
 };
+
 const ProfilePicture = () => {
   const [showGIF, setshowGIF] = useState(false);
+
   return (
-    <>
-       
-      <svg width="0" height="0">
-        <clipPath id="squircle" clipPathUnits="objectBoundingBox">
-          <path d="M0.5,0 C0.78,0,1,0.22,1,0.5 C1,0.78,0.78,1,0.5,1 C0.22,1,0,0.78,0,0.5 C0,0.22,0.22,0,0.5,0 Z" />
-        </clipPath>
+    <div className="flex flex-col items-center md:items-start w-full">
+      {/* 1. The Mask Definition */}
+      <svg width="0" height="0" style={{ position: 'absolute' }}>
+        <defs>
+          <clipPath id="squircle" clipPathUnits="objectBoundingBox">
+            <path d="M0.5,0 C0.78,0,1,0.22,1,0.5 C1,0.78,0.78,1,0.5,1 C0.22,1,0,0.78,0,0.5 C0,0.22,0.22,0,0.5,0 Z" />
+          </clipPath>
+        </defs>
       </svg>
 
+      {/* 2. The Scalable Container */}
       <div
-        className="cursor-pointer animate-fade-in animation-delay-300 w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 transition-transform duration-300 hover:scale-105"
-        style={{ clipPath: "url(#squircle)", marginLeft: '250px'}}
+        className="cursor-pointer animate-fade-in animation-delay-300 
+                   w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 
+                   transition-transform duration-300 hover:scale-105
+                   /* This replaces your 250px margin: centered on mobile, pushed right on desktop */
+                   ml-0 md:ml-[250px]" 
+        style={{ 
+          clipPath: "url(#squircle)", 
+          WebkitClipPath: "url(#squircle)" 
+        }}
         onClick={() => setshowGIF(!showGIF)}
         onMouseEnter={() => setshowGIF(true)}
         onMouseLeave={() => setshowGIF(false)}
       >
         <img
           src={showGIF && siteConfig.dancingGIF ? siteConfig.dancingGIF : siteConfig.image}
-          alt="ProfilPic"
-          className="w-full h-full object-contain shadow-3xl"
+          alt="Profile"
+          /* 'object-cover' is the secret—it forces the GIF to fill the squircle 
+             completely regardless of the GIF's original size */
+          className="w-full h-full object-cover shadow-3xl" 
         />
       </div>
-    </>
+    </div>
   );
 };
 
