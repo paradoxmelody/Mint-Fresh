@@ -149,10 +149,10 @@ const Portal = () => {
         </div>
 
         {/* Main grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1400px] mx-auto">
           
           {/* Music Box - Now Playing (Using Win98 classes) */}
-          <div className="window w-full md:w-[490px] md:h-[400px]">
+          <div className="window w-full  max-w-[490px] md:h-[400px]">
             <div className="title-bar bg-pink-600">
               <div className="title-bar-text text-white">
                  NOW PLAYING
