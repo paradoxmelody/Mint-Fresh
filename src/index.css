@@ -146,3 +146,9 @@ body:not(.portal-active) * {
 /* Win95 Helpers */
 .win95-border { border: 2px solid; border-color: #dfdfdf #808080 #808080 #dfdfdf; }
 .win95-border-inset { border: 2px solid; border-color: #808080 #dfdfdf #dfdfdf #808080; }
+
+canvas {
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+  display: block;
+}
