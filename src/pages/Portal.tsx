@@ -4,19 +4,18 @@ import { Link } from "react-router-dom";
 // @ts-ignore: Module './components/Particles' has no type declaration
 import LightRays from './LightRays';
 import StarsBackground from "./StarsBackground";
-
-// Define the shape of a song object for better type safety
+ 
 interface Song {
   id: number;
   title: string;
   artist: string;
   color: string;
-  path: string; // New path property for the song file
-  cover: string; // New cover path for the album art
+  path: string;  
+  cover: string; 
 }
 
 const Portal = () => {
-  // --- STATE FOR MUSIC PLAYER ---
+  
   const [currentSong, setCurrentSong] = useState<Song | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -40,7 +39,7 @@ const Portal = () => {
     },
   ];
 
-  // --- AUDIO CONTROL FUNCTIONS ---
+ 
   const handlePlayPause = (song?: Song) => {
     const songToPlay = song || currentSong;
     if (!audioRef.current || !songToPlay) return;
@@ -68,8 +67,7 @@ const Portal = () => {
     audioRef.current.currentTime = 0;
     setIsPlaying(false);
   };
-
-  // --- INITIAL SETUP (Navbar & Audio Element) ---
+ 
   useEffect(() => {
     // Hide navbar on portal page
     const nav = document.querySelector('nav');
@@ -102,12 +100,11 @@ const Portal = () => {
         setCurrentSong(playlist[0]);
     }
   }, [playlist, currentSong]);
-
-  // --- JSX RENDER ---
+ 
   return (
     <div className="portal-page min-h-screen bg-black text-white overflow-x-hidden relative">
       
-      {/* LightRays component - properly contained */}
+       
       <div className="fixed inset-0 z-0">
         <StarsBackground />
       </div>
@@ -116,11 +113,11 @@ const Portal = () => {
       </div>
     
 
-      {/* Home button (using standard button class) */}
+      {/* Home button   */}
       <div className="fixed top-6 left-6 z-50">
         <Link 
           to="/" 
-          className="window inline-block" // Use the standard `button` class
+          className="window inline-block"  
           style={{ fontFamily: "'courier', courier new" }}
           
         >
@@ -128,10 +125,10 @@ const Portal = () => {
         </Link>
       </div>
 
-      {/* Main content - proper responsive spacing */}
+      {/* Main content */}
       <div className=" relative z-10 w-full px-4 lg:px-8 pt-24 pb-20">
         
-        {/* Header (No change) */}
+        {/* Header  */}
         <div className="text-center mb-12">
            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4" 
              style={{
@@ -151,7 +148,7 @@ const Portal = () => {
         {/* Main grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           
-          {/* Music Box - Now Playing (Using Win98 classes) */}
+          {/* Music Box  */}
           <div className="window w-full  max-w-[490px] md:h-[400px]">
             <div className="title-bar bg-pink-600">
               <div className="title-bar-text text-white">
@@ -205,7 +202,7 @@ const Portal = () => {
             </div>
           </div>
 
-          {/* Favorites Box (Using Win98 classes) */}
+          {/* Favorites Box  */}
           <div className="window w-full md:w-[490px]">
             <div className="title-bar bg-pink-600">
               <div className="title-bar-text text-white">
@@ -252,7 +249,7 @@ const Portal = () => {
             </div>
           </div>
 
-          {/* Status Box (Using Win98 classes) */}
+          {/* Status Box */}
           <div className="window w-full md:w-[490px]">
             <div className="title-bar bg-cyan-600">
               <div className="title-bar-text text-white">
@@ -266,13 +263,13 @@ const Portal = () => {
                   alt="Vibing"
                   className="w-80 h-40 object-cover mb-2 border border-black"
                 />
-                <p className="text-black font-bold">Just a kid from Limps. A Tender Warrior. Hyperpolyglot, who flies with birds in the sky. I love life and being in nature. I love music. </p>
+                <p className="text-black font-bold">Just a kid from Nowhere. A Tender Warrior. Hyperpolyglot, who flies with birds in the sky. I love life and being in nature. I love music. </p>
                 <p className="text-gray-600 text-xs mt-1">last updated: today</p>
               </div>
             </div>
           </div>
           
-          {/* Webrings Box (Using Win98 classes) */}
+          {/* Webrings Box  */}
           <div className="window w-full md:w-[490px] md:h-[440px]">
             <div className="title-bar bg-purple-600">
               <div className="title-bar-text text-white">
@@ -291,28 +288,19 @@ const Portal = () => {
                 <a href="/writings" className="block text-black text-sm">
                   <i className="win98-icon icon-network"></i> WRITINGS
                 </a>
-                <a href="https://soundcloud.com/melody-81037953" className="block text-black text-sm ">
-                  <i className="win98-icon icon-internet-explorer"></i> MY MUSIC
-                </a>
+               
                 <a href="https://open.spotify.com/playlist/5z3FhQWDrLXAq9bqlF32DV?si=fh0HPlXNQqGFEH2nki1XdA" className="block text-blue-900 hover:text-pink-600 text-sm">
                   <i className="win98-icon icon-globe"></i>  SPOTIFY PLAYLIST
                 </a>
                 <a href="/drawings" className="block text-blue-900 hover:text-pink-600 text-sm ">
                   <i className="win98-icon icon-notepad"></i> DRAWINGS
                 </a>
-                <a 
-  href="https://www.youtube.com/@obsidianmoonchild-mel" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  className="block text-blue-900 hover:text-pink-600 text-sm "
->
-  <i className="win98-icon icon-video"></i>  YOUTUBE
-</a>
+                 
               </div>
             </div>
           </div>
 
-          {/* Currently Box (Using Win98 classes) */}
+          {/* Currently Box */}
           <div className="window w-full md:w-[490px] md:h-[440px]">
             <div className="title-bar bg-blue-900">
               <div className="title-bar-text text-white">
@@ -335,7 +323,7 @@ const Portal = () => {
               <div className="space-y-2 text-black">
                 <div>
                   <p className="text-black text-xs font-bold">Naruto</p>
-                  <p className="font-mono text-sm">Beyond Good and Evil</p>
+                  <p className="font-mono text-sm">Matilda</p>
                 </div>
                 <div>
                   <p className="text-black text-xs font-bold">Kuroko No Basket</p>
@@ -396,7 +384,7 @@ const Portal = () => {
           </div>
         </div>
 
-        {/* Playlist Sidebar - Below the grid */}
+        {/* Playlist Sidebar   */}
         <div className="flex items-start justify-center gap-4 mt-6 mb-8">
           {/* LEFT SIDEBAR */}
           <div className="hidden lg:flex flex-col gap-4">
@@ -444,7 +432,7 @@ const Portal = () => {
             </div>
 
             {/* Playlist controls */}
-            <div className="field-row mt-4 p-2">
+            <div className="field-row mt-2 p-4">
               <label htmlFor="volume" className="text-xs text-black">Volume:</label>
               <input type="range" id="volume" className="w-full bg-blue-800" onChange={(e) => {
                 if (audioRef.current) audioRef.current.volume = parseFloat(e.target.value);
@@ -457,7 +445,7 @@ const Portal = () => {
                 >
                   {isPlaying ? '⏸ PAUSE' : '▶ PLAY'}
                 </button>
-                <button className="text-xs px-2 py-1" onClick={handleStop}>⏹ STOP</button>
+                <button className="text-xs px-3 py-1" onClick={handleStop}>⏹ STOP</button>
                 <button className="text-xs px-2 py-1">⏭</button>
                 <button className="text-xs px-2 py-1">--</button>
               </div>
@@ -473,7 +461,7 @@ const Portal = () => {
           </div>
         </div>
 
-        {/* Guestbook & Back links (Using Win98 classes) */}
+        {/* Guestbook and Return Links */}
         <div className="mt-12 flex flex-col md:flex-row gap-6 justify-center">
           <div className="window p-6 text-center">
             <h3 className="text-xl font-bold text-black mb-2">PLEASE SIGN MY GUESTBOOK!</h3>
@@ -496,11 +484,10 @@ const Portal = () => {
           </div>
         </div>
       </div>
-
-      {/* Taskbar (Using Win98 classes) */}
+ 
 <div className="fixed bottom-0 left-0 right-0 h-12 bg-[#c0c0c0] border-t-2 border-[#dfdfdf] z-50 flex items-center px-1 shadow-[inset_0_1px_0_0_#808080]">
   
-  {/* Start Button - Pressed 3D effect */}
+   
   <button 
     className="h-10 px-3 bg-[#c0c0c0] border-2 border-[#808080] border-t-[#dfdfdf] border-l-[#dfdfdf] flex items-center gap-2 active:border-[#dfdfdf] active:border-t-[#808080] active:border-l-[#808080] active:shadow-[inset_1px_1px_0_0_#808080]"
     onClick={() => setIsStartMenuOpen(!isStartMenuOpen)}
@@ -566,7 +553,7 @@ const Portal = () => {
               alt="Windows"
               className="w-8 h-8"
             />
-            <span className="text-lg">Limpopo</span>
+            <span className="text-lg">MIKE</span>
           </div>
           
           {/* Menu Items */}
