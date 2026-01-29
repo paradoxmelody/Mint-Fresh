@@ -1,5 +1,5 @@
-
 🌿 Mint Fresh
+
 A modern, fresh React portfolio/web application built with TypeScript and Vite.
 
 ✨ Features
