@@ -205,8 +205,7 @@ This project currently does not have an explicit license. Please contact the aut
 ## 📞 Support & Contact
 
 -   🐛 Issues: [GitHub Issues](https://github.com/paradoxmelody/Mint-Fresh/issues)
--   📧 Email: [paradoxmelody@example.com](mailto:paradoxmelody@example.com) <!-- TODO: Replace with actual contact email -->
-
+ 
 ---
 
 <div align="center">
